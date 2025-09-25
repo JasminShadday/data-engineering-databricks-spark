@@ -26,3 +26,30 @@ Cache: guardar dados na memória temporariamente para acelerar consultas repetid
 Trabalhar com DataFrames é mais organizado e otimizado do que usar listas ou RDDs puros.
 DataFrames já vêm com esquema (colunas e tipos), permitindo processamento paralelo eficiente.
 - É como usar uma tabela do Excel bem formatada em vez de uma lista bagunçada de anotações.
+
+## Pipeline de dados
+É como uma linha de produção que leva os dados da fonte até o consumo final.
+Ela define os passos automáticos que os dados percorrem para sair do estado cru até virar informação útil.
+
+### Etapas comuns de uma pipeline no Data Lake:
+
+#### Ingestão (Landing Zone)
+Captura os dados de várias fontes (bancos, APIs, arquivos CSV, logs, etc.)
+Exemplo: salvar os arquivos brutos na camada Bronze.
+
+#### Transformação (Bronze ➝ Silver)
+Limpeza: remover duplicados, corrigir erros, padronizar formatos.
+Enriquecimento: juntar informações de diferentes fontes.
+
+#### Refinamento (Silver ➝ Gold)
+Agregar, calcular métricas, deixar pronto para dashboards e relatórios.
+
+#### Entrega/Consumo
+Os dados da camada Gold são consumidos por ferramentas de BI (Power BI, Tableau), Machine Learning ou APIs.
+
+#### Exemplo:
+Fábrica de suco.
+Ingestão (Bronze) → pegar as frutas direto da fazenda.
+Transformação (Silver) → lavar, descascar, tirar as partes ruins.
+Refinamento (Gold) → espremer, filtrar e engarrafar o suco.
+Consumo → levar o suco pronto para o mercado (usuários finais)
